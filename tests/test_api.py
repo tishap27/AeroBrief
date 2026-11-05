@@ -8,3 +8,6 @@ def test_health():
 
 def test_bad_icao():
     assert client.get("/metar/12").status_code == 400
+
+def test_bad_icao_taf():
+    assert client.get("/taf/12").status_code == 400
