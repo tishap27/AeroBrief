@@ -47,3 +47,24 @@ docker run -p 8000:8000 aerobrief
 pytest
 ```
 Tests run on every push and pull request through GitHub Actions.
+
+## Documentation
+- [Architecture and design decisions](docs/architecture.md)
+- [Requirements and test traceability](docs/requirements.md)
+
+## Project layout
+- `app/main.py`: API endpoints
+- `app/cache.py`: SQLite cache with expiry
+- `tests/`: unit tests
+- `docs/`: architecture and requirements
+- `Dockerfile`: container image
+- `.github/workflows/ci.yml`: CI pipeline
+
+## Limitations
+- Single instance only: the SQLite cache is local to one container
+- No rate limiting on the public endpoints yet
+- Upstream failures return 404 rather than a separate error code
+- The 404 case has no automated test yet (see requirements)
+
+## Data source
+Weather data comes from [aviationweather.gov](https://aviationweather.gov).
