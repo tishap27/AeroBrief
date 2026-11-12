@@ -51,6 +51,7 @@ Tests run on every push and pull request through GitHub Actions.
 ## Documentation
 - [Architecture and design decisions](docs/architecture.md)
 - [Requirements and test traceability](docs/requirements.md)
+- [Decision records](docs/adr)
 
 ## Project layout
 - `app/main.py`: API endpoints
