@@ -40,6 +40,7 @@ uvicorn app.main:app --reload
 ```
 docker build -t aerobrief .
 docker run -p 8000:8000 aerobrief
+docker compose up --build
 ```
 
 ## Tests
